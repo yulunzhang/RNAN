@@ -32,7 +32,6 @@ For more informaiton, please refer to [EDSR(PyTorch)](https://github.com/thstkdg
     **You can use scripts in file 'Train_RNAN_scripts' to train models for our paper.**
 
     ```bash
-    # BI, scale 2, 3, 4, 8
     # pytorch 0.3.1
     # train scripts
     # RNAN_CAR_Y_F64G10P48L2N10
