@@ -16,14 +16,24 @@ In this paper, we propose a residual non-local attention network for high-qualit
 
 ## Tasks
 ### Gray-scale Image Denoising 
+![PSNR_DN_Gray](/Figs/PSNR_DN_Gray.PNG)
+![Visual_DN_Gray](/Figs/Visual_DN_Gray.PNG)
 More details at [DN_Gray](https://github.com/yulunzhang/RNAN/tree/master/DN_Gray).
 ### Color Image Denoising 
+![PSNR_DN_RGB](/Figs/PSNR_DN_RGB.PNG)
+![Visual_DN_RGB](/Figs/Visual_DN_RGB.PNG)
 More details at [DN_RGB](https://github.com/yulunzhang/RNAN/tree/master/DN_RGB).
 ### Image Demosaicing 
+![PSNR_Demosaic](/Figs/PSNR_Demosaic.PNG)
+![Visual_Demosaic](/Figs/Visual_Demosaic.PNG)
 More details at [Demosaic](https://github.com/yulunzhang/RNAN/tree/master/Demosaic).
 ### Image Compression Artifact Reduction 
+![PSNR_CAR](/Figs/PSNR_CAR.PNG)
+![Visual_CAR](/Figs/Visual_CAR.PNG)
 More details at [CAR](https://github.com/yulunzhang/RNAN/tree/master/CAR).
 ### Image Super-resolution 
+![PSNR_SR](/Figs/PSNR_SR.PNG)
+![Visual_SR](/Figs/Visual_SR.PNG)
 More details at [SR](https://github.com/yulunzhang/RNAN/tree/master/SR).
 
 ## Citation
