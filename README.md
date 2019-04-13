@@ -22,7 +22,7 @@ More details at [DN_RGB](https://github.com/yulunzhang/RNAN/tree/master/DN_RGB).
 ### Image Demosaicing 
 More details at [Demosaic](https://github.com/yulunzhang/RNAN/tree/master/Demosaic).
 ### Image Compression Artifact Reduction 
-More details at [CAY](https://github.com/yulunzhang/RNAN/tree/master/CAR).
+More details at [CAR](https://github.com/yulunzhang/RNAN/tree/master/CAR).
 ### Image Super-resolution 
 More details at [SR](https://github.com/yulunzhang/RNAN/tree/master/SR).
 
