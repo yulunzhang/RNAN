@@ -1,0 +1,39 @@
+#!/bin/bash/
+CUDA_VISIBLE_DEVICES=1 python main.py --model EDSR --noise_level 10 --save EDSR_F64R80_N10 --n_resblocks 80 --patch_size 48 --reset  --save_results --chop --ext sep
+CUDA_VISIBLE_DEVICES=0 python main.py --model EDDN --noise_level 10 --save EDDN_F64R80_N10 --n_resblocks 80 --patch_size 48 --reset  --save_results --chop --ext sep
+CUDA_VISIBLE_DEVICES=1 python main.py --model EDSR --noise_level 30 --save EDSR_F64R80_N30 --patch_size 48 --reset  --save_results --chop --ext sep
+CUDA_VISIBLE_DEVICES=0 python main.py --model EDSR --noise_level 50 --save EDSR_F64R80_N50 --patch_size 48 --reset  --save_results --chop --ext sep
+CUDA_VISIBLE_DEVICES=0 python main.py --model EDSR --noise_level 70 --save EDSR_F64R80_N70 --patch_size 48 --reset  --save_results --chop --ext sep
+
+CUDA_VISIBLE_DEVICES=1 python main.py --template GAN --noise_level 10 --save EDSR_baseline_GAN --reset --patch_size 48 --loss 5*VGG54+0.15*GAN --pre_train ../experiment/model/EDSR_baseline_N10.pt --save_results --chop --print_model
+
+
+CUDA_VISIBLE_DEVICES=1 python main.py --model DNCA --noise_level 30 --save DNCA_F64R20P48N30 --n_cab_1 20 --patch_size 48 --reset  --save_results --chop --ext sep
+CUDA_VISIBLE_DEVICES=0 python main.py --model DNCA --noise_level 10 --save DNCA_F64R20P48N10 --n_cab_1 20 --patch_size 48 --reset  --save_results --chop --ext sep
+
+CUDA_VISIBLE_DEVICES=0 python main.py --template GAN --model DNCA --noise_level 30 --save DNCA_GAN_F64R20P144N30 --n_cab_1 20 --patch_size 144 --reset  --save_results --chop --ext sep --loss 5*VGG54+0.15*GAN --pre_train ../experiment/model/DNCA_F64R20P48N30.pt
+
+
+CUDA_VISIBLE_DEVICES=0 python main.py --model DNCA --noise_level 10 --save DNCA_F64R20P144N10_pretrain --n_cab_1 20 --patch_size 144 --reset  --save_results --chop --ext sep --pre_train ../experiment/model/DNCA_F64R20P48N10.pt
+
+CUDA_VISIBLE_DEVICES=1 python main.py --model DNCA --noise_level 10 --save DNCA_F64R20P144N10 --n_cab_1 20 --patch_size 144 --reset  --save_results --chop 
+
+
+LOG=./../experiment/NLA_F64R20P48N10-`date +%Y-%m-%d-%H-%M-%S`.txt
+CUDA_VISIBLE_DEVICES=1 python main.py --model NLA --noise_level 10 --save NLA_F64R20P48N10 --n_cab_1 20 --patch_size 48 --reset  --save_results --chop 2>&1 | tee $LOG
+
+LOG=./../experiment/NLA_F64R20P48N10_NL-`date +%Y-%m-%d-%H-%M-%S`.txt
+CUDA_VISIBLE_DEVICES=1 python main.py --model NLA --noise_level 10 --save NLA_F64R20P48N10_NL --n_cab_1 20 --patch_size 48 --reset  --save_results --chop --print_model 2>&1 | tee $LOG
+
+CUDA_VISIBLE_DEVICES=1 python main.py --model DNCA --noise_level 10 --save DNCA_F64R20P144N10 --n_cab_1 20 --patch_size 144 --reset  --save_results --chop 
+
+
+
+
+
+
+
+
+
+
+
